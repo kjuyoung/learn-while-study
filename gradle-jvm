@@ -1,1 +1,7 @@
+Gradle로 build시 실패
 
+Intellij에서 ./gradlew -Pprofile=dev-azure clean build -x test으로 빌드 시 build failed
+./gradlew -v로 확인해보니 jvm 버전이 intellij에서 설정한 1.8과 달리 17로 설정되어 있음
+settings와 project structure에서 jdk버전을 수정해보았지만 계속 build failed
+최상위 위치에 gradle.properties 파일 생성하고 하기 내용 설정(jdk 1.8 경로 설정)
+org.gradle.java.home=C:\\Program Files\\Eclipse Adoptium\\jdk-8.0.352.8-hotspot
